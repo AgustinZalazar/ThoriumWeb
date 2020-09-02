@@ -1,0 +1,17 @@
+@import "background";
+@import "header";
+@import "media";
+
+* , *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body { 
+    font-family: 'Open Sans', sans-serif ;
+}
+
+.container {
+    width: 80%;
+    margin: 2rem auto;
+}
