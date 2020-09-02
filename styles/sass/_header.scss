@@ -1,79 +1,65 @@
-.main-header {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  height: 65px;
-  width: 100vw;
-  padding: 0 10vw;
-  padding-top: 20px;
-  color: #ffffff;
-  z-index: 1;
-  transition: .4s ease-out;  
-  a {
-    text-decoration: none;
-    color: inherit;
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-
-    .nav-link {
-      a {
-        margin: 0.2rem;
-        padding: 1rem 0.5rem;
-      }
-      a:hover {
-        border-bottom: 2px solid grey;
-      }
-    }
-  }
-
-  .menu-icon {
-    position: relative;
-    padding: 26px 10px;
-    cursor: pointer;
-    z-index: 1;
-    display: none;
-    &__line{
-        display: block;
-        position: relative;
-        background: #ffffff;
-        height: 2px;
-        width: 20px;
-        border-radius: 4px;
-        transition: background .8s ease;
-        &::before, &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            border-radius: 4px;
-            background: #ffffff;
-            transition: background .8s ease;
-        }
-        &::before {
-            transform: translateY(-5px);
-        }
-        &::after {
-            transform: translateY(5px);
-        }
-    }
-  }
-  .menu-btn{
-      display: none;
-  }
-
-  &.scrolled {
-      height: 60px;
-      background: rgba(0, 0, 0, 0.397);
-      .menu-icon{
-          &__line,
-          &__line::before,
-          &__line::after {
-              background: #ffffff;
-          }
-      }
-  }
+.navbar {
+  background: rgba(0, 0, 0, 0.6);    
 }
+
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  color: white!important;  
+}
+
+.navbar-toggler {
+  border: none!important;  
+  outline: none!important;
+}
+
+.navbar-toggler i {
+  color: white;
+}
+
+.navbar-nav .nav-item .nav-link{
+  border: none!important;  
+  outline: none!important;
+  color: white!important;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+
+/* dekstop */
+@media (min-width: 992px) {
+
+  .navbar {
+    background: transparent;
+  }
+  .brand .navbar-brand {
+    font-size: 32px;
+    border: none!important;  
+    outline: none!important;
+    font-family: 'Roboto', sans-serif; 
+    color: #fff!important;
+  }
+
+  .navbar-nav .nav-item .nav-link{  
+    color: white!important;    
+  }
+  .nav-link {
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+  }
+  .nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;    
+    transition: width .3s;
+  }
+
+  .nav-link:hover::after {
+    width: 50%;
+    transition: width .3s;
+  }
+
+} 
